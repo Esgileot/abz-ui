@@ -10,7 +10,7 @@ const validationSchema = yup.object({
   email: yup.string().required('Email is required'),
   phoneNumber: yup
     .string()
-	// eslint-disable-next-line
+    // eslint-disable-next-line
     .matches(/^[\+]{0,1}380([0-9]{9})$/, {
       message: 'Phone number must match the following: "+380#########"',
     })
@@ -49,6 +49,7 @@ export const CreateUserForm: React.FC = () => {
               headers: { Token: token, 'Content-Type': 'multipart/form-data' },
             })
             .then(res => {
+              alert(`User created!`)
               console.log('User created!')
             })
         })
