@@ -41,11 +41,11 @@ export const CreateUserForm: React.FC = () => {
       formData.append('photo', file)
 
       axios
-        .get(`${process.env.REACT_APP_API_DOMAIN}token`)
+        .get(`${process.env.REACT_APP_API_DOMAIN}/token`)
         .then(res => {
           const token = res.data.token
           axios
-            .post(`${process.env.REACT_APP_API_DOMAIN}users`, formData, {
+            .post(`${process.env.REACT_APP_API_DOMAIN}/users`, formData, {
               headers: { Token: token, 'Content-Type': 'multipart/form-data' },
             })
             .then(res => {
@@ -62,7 +62,7 @@ export const CreateUserForm: React.FC = () => {
   const [file, setFile] = useState<File | null>()
   const [missingPhoto, setMissingPhoto] = useState(false)
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_DOMAIN}positions`).then(res => {
+    axios.get(`${process.env.REACT_APP_API_DOMAIN}/positions`).then(res => {
       res && res.data && setPositions(res.data.position)
     })
   })

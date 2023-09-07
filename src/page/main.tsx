@@ -11,7 +11,7 @@ export const Main: React.FC = () => {
   const [count] = useState(6)
   const [buttonName, setButtonName] = useState('Show more')
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_DOMAIN}users?page=${page}&count=${count}`).then(res => {
+    axios.get(`${process.env.REACT_APP_API_DOMAIN}/users?page=${page}&count=${count}`).then(res => {
       if (res && res.data) {
         setUsers(res.data.users)
         setMaxPage(res.data['total_pages'])
@@ -33,7 +33,7 @@ export const Main: React.FC = () => {
     }
 
     axios
-      .get(`${process.env.REACT_APP_API_DOMAIN}users?page=${page + 1}&count=${count}`)
+      .get(`${process.env.REACT_APP_API_DOMAIN}/users?page=${page + 1}&count=${count}`)
       .then(res => {
         if (res && res.data) {
           setPage(page + 1)
