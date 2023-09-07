@@ -23,6 +23,8 @@
     "yup": "^1.2.0"
   },
   "scripts": {
+    "format": "prettier --write \"src/**/*.ts*\"",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,5 +47,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "6.1.0",
+    "cross-env": "7.0.3",
+    "eslint-import-resolver-typescript": "3.5.5",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-react": "7.32.2"
   }
 }

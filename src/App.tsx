@@ -1,12 +1,12 @@
-import { Container } from "@mui/material";
-import { Main } from "./page/main";
+import { Container } from '@mui/material'
+import { Main } from './page/main'
 
 function App() {
-	return (
-		<Container maxWidth={"lg"}>
-			<Main />
-		</Container>
-	);
+  return (
+    <Container maxWidth={'lg'}>
+      <Main />
+    </Container>
+  )
 }
 
-export default App;
+export default App
